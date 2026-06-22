@@ -40,3 +40,17 @@ document.querySelectorAll("[data-local-href]").forEach((link) => {
     link.href = link.dataset.localHref;
   }
 });
+if (window.location.protocol !== "file:" && window.location.pathname.endsWith("/index.html")) {
+  const cleanPath = window.location.pathname.slice(0, -"index.html".length);
+  window.history.replaceState(null, "", `${cleanPath}${window.location.search}${window.location.hash}`);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ block: "start" });
+  });
+});
