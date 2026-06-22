@@ -6,6 +6,24 @@
   <title>ETNP | Epic Team Name Productions</title>
   <meta name="description" content="Epic Team Name Productions is an Incredibox modding team portfolio.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .team-list article::after {
+      top: 12px;
+      left: 12px;
+      right: auto;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #858ba7;
+      box-shadow: 19px 0 #9ba0bb, 38px 0 #b5b9cd;
+      transition: background-color 260ms ease, box-shadow 260ms ease;
+    }
+
+    .team-list article:hover::after {
+      background: #ff5f57;
+      box-shadow: 19px 0 #febc2e, 38px 0 #28c840;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
