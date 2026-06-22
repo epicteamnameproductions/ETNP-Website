@@ -35,3 +35,8 @@ projectButtons.forEach((button) => {
 projectSlider?.addEventListener("scroll", updateProjectButtons);
 window.addEventListener("resize", updateProjectButtons);
 updateProjectButtons();
+document.querySelectorAll("[data-local-href]").forEach((link) => {
+  if (window.location.protocol === "file:") {
+    link.href = link.dataset.localHref;
+  }
+});
